@@ -1,23 +1,20 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
-<html>
+<html lang="en">
   <head>
     <title>SRFI 25: Multi-dimensional Array Primitives</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/srfi.css" type="text/css" />
+    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
   </head>
 
   <body>
 
-<H1>Title</H1>
+<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>25: Multi-dimensional Array Primitives</h1>
 
-Multi-dimensional Array Primitives
+<p>by Jussi Piitulainen</p>
 
-<H1>Author</H1>
-
-Jussi Piitulainen
-
-<H1>Status</H1>
+<h2>Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+25  +at+srfi+dotschemers+dot+org">srfi-25  @<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-25  ">archive</a>.</p>
 <UL>
@@ -27,7 +24,7 @@ Jussi Piitulainen
 </UL>
 </P>
 
-<H1>Abstract</H1>
+<h2>Abstract</h2>
 
 <p>
 A core set of procedures for creating and manipulating heterogeneous
@@ -42,7 +39,7 @@ The specification is based on an original contribution by Alan Bawden
 in 1993.
 </p>
 
-<H1>Rationale</H1>
+<h2>Rationale</h2>
 
 <p>
 The proposed arrays encourage a natural declarative programming
@@ -105,7 +102,7 @@ It is not required that vectors not be arrays. It is not required that
 they be, either.
 </p>
 
-<H1>Specification</H1>
+<h2>Specification</h2>
 
 <p>
 Arrays are heterogeneous data structures whose elements are indexed by
@@ -348,7 +345,7 @@ This document does not specify when arrays are <code>equal?</code>.
 (Indeed, R5RS <code>equal?</code> will do the wrong thing.)
 </p>
 
-<h1>Examples</h1>
+<h2>Examples</h2>
 
 <p>
 The reference implementation comes with a number of files that
@@ -373,7 +370,7 @@ in <em>testing</em> an implementation; that is their origin).
 
 </ol>
 
-<H1>Implementation</H1>
+<h2>Implementation</h2>
 
 <p>
 A portable reference implementation is provided. It uses a minimal
@@ -468,7 +465,7 @@ code. (Sharing uses a check that is exponential in the number of
 dimensions. It is disabled above a threshold rank.)
 </p>
 
-<h1>Acknowledgements</h1>
+<h2>Acknowledgements</h2>
 
 <p>
 The original concept comes from a message to the Usenet newsgroup
@@ -491,7 +488,7 @@ mailing list in 1998. That appears to be a part of the past of the <a
 href="http://srfi.schemers.org">SRFI process</a>.
 </p>
 
-<H1>Copyright</H1>
+<h2>Copyright</h2>
 <p>Copyright (C) Jussi Piitulainen (2001). All Rights Reserved.</p>
 
 <p>
