@@ -1,11 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN" "http://www.w3.org/TR/html.dtd">
 <html lang="en">
   <head>
     <title>SRFI 25: Multi-dimensional Array Primitives</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
-    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png" />
   </head>
 
   <body>
@@ -17,12 +17,12 @@
 <h2>Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+25  +at+srfi+dotschemers+dot+org">srfi-25  @<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-25  ">archive</a>.</p>
-<UL>
-<LI>Draft: 2001-11-12--2002-01-11 </LI>
-<LI>Revised: 2002-02-03</LI>
-<LI>Final: 2002-05-21</LI>
-</UL>
-</P>
+<ul>
+<li>Draft: 2001-11-12--2002-01-11 </li>
+<li>Revised: 2002-02-03</li>
+<li>Final: 2002-05-21</li>
+</ul>
+
 
 <h2>Abstract</h2>
 
@@ -136,7 +136,7 @@ The following ten procedures should be implemented.
 </p>
 
 <p id="array-p">
-<code>(array? <var>obj</var>)</code><br> 
+<code>(array? <var>obj</var>)</code><br />
 
 Returns <samp>#t</samp> if <var>obj</var> is an array, otherwise
 returns <samp>#f</samp>.
@@ -150,8 +150,8 @@ implementations provide something similar.
 </p>
 
 <p id="make-array">
-<code>(make-array <var>shape</var>)</code><br>
-<code>(make-array <var>shape</var> <var>obj</var>)</code><br>
+<code>(make-array <var>shape</var>)</code><br />
+<code>(make-array <var>shape</var> <var>obj</var>)</code><br />
 
 Returns a newly allocated array whose shape is given by
 <var>shape</var>.  If <var>obj</var> is provided, then each element is
@@ -161,7 +161,7 @@ unspecified. The array does not retain a dependence to
 </p>
 
 <p id="shape">
-<code>(shape <var>bound ...</var>)</code><br> 
+<code>(shape <var>bound ...</var>)</code><br />
 
 Returns a shape. The sequence <var>bound ...</var> must consist of an
 even number of exact integers that are pairwise not decreasing. Each
@@ -185,7 +185,7 @@ corresponding upper bound, where <var>k</var> satisfies
 </p>
 
 <p id="array">
-<code>(array <var>shape</var> <var>obj ...</var>)</code><br>
+<code>(array <var>shape</var> <var>obj ...</var>)</code><br />
 
 Returns a new array whose shape is given by <var>shape</var> and the
 initial contents of the elements are <var>obj ...</var> in row major
@@ -193,33 +193,33 @@ order. The array does not retain a dependence to <var>shape</var>.
 </p>
 
 <p id="array-rank">
-<code>(array-rank <var>array</var>)</code><br>
+<code>(array-rank <var>array</var>)</code><br />
 
 Returns the number of dimensions of <var>array</var>.
+</p>
 <pre>
     (array-rank
        (make-array (shape 1 2 3 4)))
 </pre>
-
 <p>
 Returns <samp>2</samp>.
 </p>
 
 <p id="array-start">
-<code>(array-start <var>array</var> <var>k</var>)</code><br>
+<code>(array-start <var>array</var> <var>k</var>)</code><br />
 
 Returns the lower bound for the index along dimension <var>k</var>.
 </p>
 
 <p id="array-end">
-<code>(array-end <var>array</var> <var>k</var>)</code><br>
+<code>(array-end <var>array</var> <var>k</var>)</code><br />
 
 Returns the upper bound for the index along dimension <var>k</var>.
 </p>
 
 <!--
 <p>
-<code>(array-shape <var>array</var>)</code><br>
+<code>(array-shape <var>array</var>)</code><br />
 
 Returns a newly allocated shape of <var>array</var>.
 </p>
@@ -241,8 +241,8 @@ from any array.
 -->
 
 <p id="array-ref">
-<code>(array-ref <var>array</var> <var>k ...</var>)</code><br>
-<code>(array-ref <var>array</var> <var>index</var>)</code><br>
+<code>(array-ref <var>array</var> <var>k ...</var>)</code><br />
+<code>(array-ref <var>array</var> <var>index</var>)</code><br />
 
 Returns the contents of the element of <var>array</var> at index
 <var>k ...</var>. The sequence <var>k ...</var> must be a valid index
@@ -275,29 +275,28 @@ Returns <samp>(3 1 4)</samp>.
 </p>
 
 <p id="array-set!">
-<code>(array-set! <var>array</var> <var>k ...</var> <var>obj</var>)</code><br>
-<code>(array-set! <var>array</var> <var>index</var> <var>obj</var>)</code><br>
+<code>(array-set! <var>array</var> <var>k ...</var> <var>obj</var>)</code><br />
+<code>(array-set! <var>array</var> <var>index</var> <var>obj</var>)</code><br />
 
 Stores <var>obj</var> in the element of <var>array</var> at index
 <var>k ...</var>. Returns an unspecified value. The sequence <var>k
 ...</var> must be a valid index to <var>array</var>. In the second
 form, <var>index</var> must be either a vector or a 0-based
 1-dimensional array containing <var>k ...</var>.
-
+</p>
 <pre>
     (let ((a (make-array
                 (shape 4 5 4 5 4 5))))
        (array-set! a 4 4 4 'huuhkaja)
        (array-ref a 4 4 4))
 </pre>
-
 <p>
 Returns <samp>huuhkaja</samp>.
 </p>
 
 <p id="share-array">
 <code>(share-array <var>array</var> <var>shape</var> <var>proc</var>)</code>
-<br> 
+<br />
 
 Returns a new array of shape <var>shape</var> that shares elements of
 <var>array</var> through <var>proc</var>. The procedure
@@ -361,24 +360,21 @@ in <em>testing</em> an implementation; that is their origin).
      <code>array-equal?</code>, and a <code>transpose</code> that can
      permute the dimensions of an array any which way.
 
-<li> A test suite <a href="test.scm">test.scm</a> for <em>array</em>,
+</li><li> A test suite <a href="test.scm">test.scm</a> for <em>array</em>,
      and another test suite <a href="list.scm">list.scm</a> for
      <em>arlib</em>.
 
-<li> A rudimentary display procedure <code>(play array)</code> in <a
-     href="play.scm">play.scm</a>, for playing around with the system.
+</li><li> A rudimentary display procedure <code>(play array)</code> in <a href="play.scm">play.scm</a>, for playing around with the system.
 
-</ol>
+</li></ol>
 
 <h2>Implementation</h2>
 
 <p>
 A portable reference implementation is provided. It uses a minimal
-error reporting mechanism that conforms to <a
-href="https://srfi.schemers.org/srfi-23/">SRFI 23</a> (Error reporting
+error reporting mechanism that conforms to <a href="https://srfi.schemers.org/srfi-23/">SRFI 23</a> (Error reporting
 mechanism). Type disjointness requires support from the host
-implementation, such as support for <a
-href="https://srfi.schemers.org/srfi-9/">SRFI 9</a> (Defining Record
+implementation, such as support for <a href="https://srfi.schemers.org/srfi-9/">SRFI 9</a> (Defining Record
 Types). All names not defined in this proposal are in the prefix
 "<code>array:</code>", which serves as a module system.
 </p>
@@ -404,15 +400,15 @@ consists of the following parts, each in its own file.
      type disjointness, or portable as procedures, in a file
      <em>as-*.scm</em>, and
 
-<li> <dfn>indexing operations</dfn> to match the type, in a file
+</li><li> <dfn>indexing operations</dfn> to match the type, in a file
      <em>ix-*.scm</em>, and
 
-<li> an <dfn>affine recogniser</dfn> of one of three types, optimised
+</li><li> an <dfn>affine recogniser</dfn> of one of three types, optimised
      up to some number of dimensions, in a file <em>op-*.scm</em>, and
 
-<li> the main source file <a href="array.scm">array.scm</a>.
+</li><li> the main source file <a href="array.scm">array.scm</a>.
 
-</ol>
+</li></ol>
 
 <p>
 Affine recognisers are made by a program <a href="opt.scm">opt.scm</a>
@@ -430,24 +426,22 @@ procedures; load <tt>as-</tt>, <tt>ix-</tt> and <tt>op-</tt> and
      mapping to the arguments of <code>array-ref</code> and
      <code>array-set!</code>.
 
-<li> In the <a href="op-tter.scm">tter</a> type representation, index
+</li><li> In the <a href="op-tter.scm">tter</a> type representation, index
      mappings are pairs of procedures: one takes exactly the indices,
-     the other takes indices and an object. The matching <a
-     href="ix-tter.scm">access procedures</a> apply the first
+     the other takes indices and an object. The matching <a href="ix-tter.scm">access procedures</a> apply the first
      procedure to the argumets of <code>array-ref</code> and the
      second procedure to the arguments of <code>array-set!</code>.
 
-<li> In <a href="op-ctor.scm">ctor</a> representation, index mappings
+</li><li> In <a href="op-ctor.scm">ctor</a> representation, index mappings
      are coefficient vectors. The <a href="ix-ctor.scm">access
      procedures</a> compute the sum of products of coefficients and
      indexes in a loop on the list.
 
-</ol>
+</li></ol>
 
 <p>
 Record implementations are available <a href="as-procedure.scm">for
-generic Scheme</a> (arrays are not disjoint from procedures), <a
-href="as-srfi-9-record.scm">for SRFI 9</a> (Defining Record Types)
+generic Scheme</a> (arrays are not disjoint from procedures), <a href="as-srfi-9-record.scm">for SRFI 9</a> (Defining Record Types)
 (<em>not tested</em>), and <a href="as-plt-struct.scm">for PLT
 Scheme</a> (arrays belong to a struct type).
 </p>
@@ -484,8 +478,7 @@ wording, hidden shapes, and two kinds of index objects.
 
 <p>
 The exact title of the proposal comes from a <a href="http://zurich.ai.mit.edu/pipermail/rrrs-authors/1998-May/002349.html">message titled "a process that might work"</a> by William D. Clinger to the <tt>rrrs-authors</tt>
-mailing list in 1998. That appears to be a part of the past of the <a
-href="http://srfi.schemers.org">SRFI process</a>.
+mailing list in 1998. That appears to be a part of the past of the <a href="http://srfi.schemers.org">SRFI process</a>.
 </p>
 
 <h2>Copyright</h2>
@@ -514,9 +507,8 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </p>
 
-    <hr>
-    <address>Editor: <a
-    href="mailto:srfi minus editors at srfi dot schemers dot org">Mike Sperber</a></address>
+    <hr />
+    <address>Editor: <a href="mailto:srfi minus editors at srfi dot schemers dot org">Mike Sperber</a></address>
 <!-- Created: Tue Sep 29 19:20:08 EDT 1998 -->
 <!-- hhmts start -->
 Last modified: Sun Jan 28 13:40:29 MET 2007
